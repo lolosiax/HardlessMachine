@@ -1,0 +1,6 @@
+name: HardlessMachine
+main: top.porchwood.HardlessMachine.HardlessMachine
+version: 1.0
+
+depend:
+  - Slimefun
