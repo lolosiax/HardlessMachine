@@ -1,15 +1,12 @@
 package top.porchwood.HardlessMachine.HMItem.RunningTools;
 
 import org.bukkit.NamespacedKey;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 import top.porchwood.HardlessMachine.HardlessMachine;
 
 public class Keys {
-    @Nullable
+    @NotNull
     public static NamespacedKey makeKey(String keySubName) {
-        if (HardlessMachine.getInstance() == null) {
-            return null;
-        }
         return new NamespacedKey(HardlessMachine.getInstance(), "HardlessMachine_" + keySubName);
     }
 }

@@ -36,5 +36,7 @@ public class HMCategorys {
 
     public static final SubCategory STORAGE =
             new SubCategory(Keys.makeKey("Storage"), HM_MAIN_CATEGORY, new CustomItem(Material.LIGHT_BLUE_SHULKER_BOX, "&fHardlessMachine &a存储"));
+    public static final SubCategory TRANSPORTATION =
+            new SubCategory(Keys.makeKey("Transportation"), HM_MAIN_CATEGORY, new CustomItem(Material.DARK_OAK_BOAT, "&fHardlessMachine &a交通"));
 
 }

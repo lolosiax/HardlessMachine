@@ -9,15 +9,10 @@ import top.porchwood.Logger;
 
 public class HardlessMachine extends JavaPlugin implements SlimefunAddon {
 
-    public static final String NAMESPACE_KEY_PREFIX = "HardnessMachine";
-
     private static final Logger logger = Logger.getLogger();
 
     @Nullable
     private static HardlessMachine instance;
-
-    @Nullable
-    private NamespacedKey namespacedKey;
 
     @Override
     public void onEnable() {
@@ -32,8 +27,9 @@ public class HardlessMachine extends JavaPlugin implements SlimefunAddon {
         instance = null;
     }
 
-    @Nullable
+    @NotNull
     public static HardlessMachine getInstance() {
+        if(instance == null) throw new NullPointerException("在插件启动前获取插件实例（不会发生的吧）");
         return instance;
     }
 
