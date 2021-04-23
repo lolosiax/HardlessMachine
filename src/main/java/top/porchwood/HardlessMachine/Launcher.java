@@ -16,7 +16,7 @@ public class Launcher {
     public static void init(HardlessMachine plugin){
         logger = Logger.getLogger();
         logger.debug("Launcher：初始化物品分组类型注册");
-        HMCategorys.getInstance();
+        //HMCategorys.getInstance();
         logger.debug("Launcher：初始化物品注册");
         HMItems.init();
         HMItems.register(plugin);
