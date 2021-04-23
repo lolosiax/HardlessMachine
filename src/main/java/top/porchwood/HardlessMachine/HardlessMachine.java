@@ -8,7 +8,7 @@ import top.porchwood.Logger;
 
 public class HardlessMachine extends JavaPlugin implements SlimefunAddon{
     Logger logger;
-    public static final String namespaceKey_string = "hardness_machine";
+    public static final String namespaceKey_prefix = "HardnessMachine";
     private static HardlessMachine instance;
     private NamespacedKey namespacedKey;
     @Override
@@ -23,10 +23,6 @@ public class HardlessMachine extends JavaPlugin implements SlimefunAddon{
     @Override
     public void onDisable() {
 
-    }
-
-    public NamespacedKey getNamespacedKey() {
-        return namespacedKey == null ? namespacedKey = new NamespacedKey(this,namespaceKey_string) : namespacedKey;
     }
 
     public static HardlessMachine getInstance() {
