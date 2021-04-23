@@ -6,9 +6,9 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
-public class SpringBoat3 extends SpringBoat{
+public class SpringBoat3 extends SpringBoat {
     public SpringBoat3(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
-        vAddValue = new Vector(0,3.1,0);
+        vAddValue = new Vector(0, 3.1, 0);
     }
 }

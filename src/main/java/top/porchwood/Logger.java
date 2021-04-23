@@ -9,15 +9,23 @@ import java.util.Date;
 import java.util.Locale;
 
 public class Logger {
-    private static Logger logger;
-    public static boolean IsInDebugMod = false;
-    private static SimpleDateFormat sdf = new SimpleDateFormat("[HH:mm:ss]");
+    private static final boolean DEBUG = false;
 
-    private Logger() { }
+    private static Logger logger;
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("[HH:mm:ss]");
+
+    private Logger() {
+    }
 
     public static Logger getLogger() {
-        if(logger != null)return logger;
-        else return logger = new Logger();
+        if (logger == null) {
+            synchronized (Logger.class) {
+                if (logger == null) {
+                    logger = new Logger();
+                }
+            }
+        }
+        return logger;
     }
 
     public void error(String s) {
@@ -85,11 +93,9 @@ public class Logger {
         }
     }
 
-    public String getTime() {
+    private static String getTime() {
         return sdf.format(new Date());
     }
-
-
 
     private static String toColorFont(@NotNull String origin) {
         StringBuilder out = new StringBuilder();
