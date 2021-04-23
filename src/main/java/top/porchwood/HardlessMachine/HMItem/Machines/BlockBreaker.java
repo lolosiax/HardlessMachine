@@ -1,4 +1,4 @@
-package top.porchwood.HardlessMachine.HMItem.Machine;
+package top.porchwood.HardlessMachine.HMItem.Machines;
 
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
