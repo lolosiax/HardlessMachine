@@ -4,17 +4,24 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import top.porchwood.Logger;
 
-public class HardlessMachine extends JavaPlugin implements SlimefunAddon{
-    Logger logger;
-    public static final String namespaceKey_prefix = "HardnessMachine";
+public class HardlessMachine extends JavaPlugin implements SlimefunAddon {
+
+    public static final String NAMESPACE_KEY_PREFIX = "HardnessMachine";
+
+    private static final Logger logger = Logger.getLogger();
+
+    @Nullable
     private static HardlessMachine instance;
+
+    @Nullable
     private NamespacedKey namespacedKey;
+
     @Override
-    public void onEnable(){
+    public void onEnable() {
         instance = this;
-        logger = Logger.getLogger();
         logger.info("&6HardlessMachine正在启动！");
         logger.debug("Plugin：启动Launcher");
         Launcher.init(this);
@@ -22,12 +29,14 @@ public class HardlessMachine extends JavaPlugin implements SlimefunAddon{
 
     @Override
     public void onDisable() {
-
+        instance = null;
     }
 
+    @Nullable
     public static HardlessMachine getInstance() {
         return instance;
     }
+
     @NotNull
     @Override
     public JavaPlugin getJavaPlugin() {
