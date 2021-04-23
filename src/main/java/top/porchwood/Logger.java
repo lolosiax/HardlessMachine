@@ -21,7 +21,7 @@ public class Logger {
     }
 
     public void error(String s) {
-        print(s, "&c[ERROR]");
+        print(s, "&c");
     }
 
     public void error(Exception e) {
@@ -33,7 +33,7 @@ public class Logger {
     }
 
     public void info(String s) {
-        print(s, "&r[INFO] ");
+        print(s, "&r");
     }
 
     public void info(Exception e) {
@@ -45,7 +45,7 @@ public class Logger {
     }
 
     public void debug(String s) {
-        print(s, "&1[DEBUG]");
+        print(s, "&1");
     }
 
     public void debug(Exception e) {
@@ -57,7 +57,7 @@ public class Logger {
     }
 
     public void warn(String s) {
-        print(s, "&6[WARN] ");
+        print(s, "&6");
     }
 
     public void warn(Exception e) {
@@ -70,18 +70,18 @@ public class Logger {
 
     private void print(String s, String mode) {
         if (s == null) {
-            logger.warn("" +
-                    "&b&l&n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" +
-                    "&b&l||  Logger System found a null information. ||\n" +
-                    "&b&l||  Please check the server language file.  ||\n" +
-                    "&b&l||  Is is out the version?                  ||\n" +
-                    "&b&l&n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+            //logger.warn("" +
+            //        "&b&l&n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" +
+            //        "&b&l||  Logger System found a null information. ||\n" +
+            //        "&b&l||  Please check the server language file.  ||\n" +
+            //        "&b&l||  Is is out the version?                  ||\n" +
+            //        "&b&l&n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
             return;
         }
         String[] ss = s.split("\n");
         String time = getTime();
         for (String value : ss) {
-            System.out.println(toColorFont("&r[HardlessMachine] "+ value + "&r"));
+            System.out.println(toColorFont("&r[HardlessMachine] " + mode + value + "&r"));
         }
     }
 
